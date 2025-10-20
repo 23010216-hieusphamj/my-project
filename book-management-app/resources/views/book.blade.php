@@ -8,7 +8,10 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1>Book List</h1>
+        <h1>Book List - TEST MODE</h1>
+        <div class="alert alert-info">
+            Đang chạy ở chế độ test không cần database
+        </div>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -16,27 +19,19 @@
                     <th>Book Name</th>
                     <th>Book Code</th>
                     <th>Book Author</th>
-                    <th>Created At</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($books as $book)
+                @foreach(\$books as \$book)
                 <tr>
-                    <td>{{ $book->id }}</td>
-                    <td>{{ $book->bookName }}</td>
-                    <td>{{ $book->bookCode }}</td>
-                    <td>{{ $book->bookAuthor }}</td>
-                    <td>{{ $book->created_at }}</td>
+                    <td>{{ \$book->id }}</td>
+                    <td>{{ \$book->bookName }}</td>
+                    <td>{{ \$book->bookCode }}</td>
+                    <td>{{ \$book->bookAuthor }}</td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
-        
-        @if($books->count() == 0)
-        <div class="alert alert-warning">
-            No books found in the database.
-        </div>
-        @endif
     </div>
 </body>
 </html>
