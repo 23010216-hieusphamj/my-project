@@ -2,23 +2,29 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Book;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
+    public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        Book::create([
+            'bookName' => 'Advance Web',
+            'bookCode' => 'AW12398',
+            'bookAuthor' => 'Laravel',
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Book::create([
+            'bookName' => 'PHP Programming',
+            'bookCode' => 'PHP456',
+            'bookAuthor' => 'John Doe',
+        ]);
+
+        Book::create([
+            'bookName' => 'JavaScript Basics', 
+            'bookCode' => 'JS789',
+            'bookAuthor' => 'Jane Smith',
+        ]);
     }
 }
